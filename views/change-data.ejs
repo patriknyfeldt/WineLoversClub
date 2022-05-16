@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script
+      src="https://kit.fontawesome.com/c08e8e6912.js"
+      crossorigin="anonymous"
+    ></script>
+    <link rel="stylesheet" href="/styles/style.css" />
+    <link rel="stylesheet" href="/styles/form/form.css" />
+    <title>Redigera <%= firstName %> <%= lastName %></title>
+  </head>
+  <body>
+    <header class="header">
+      <nav class="nav">
+        <a href="/">Startsida</a>
+        <a class="current-page" href="/members">Våra medlemmar</a>
+        <a href="/register">Bli medlem</a>
+      </nav>
+    </header>
+    <main class="main">
+      <div class="form-wrapper">
+        <h1>Redigera profil</h1>
+        <form class="form" action="/update-data/<%= _id %>" method="post">
+          <div class="input-box">
+            <label class="label" for="firstName">Förnamn: </label>
+            <input
+              class="input"
+              id="firstName"
+              name="firstName"
+              type="text"
+              value="<%= firstName %>"
+            />
+          </div>
+          <div class="input-box">
+            <label class="label" for="lastName">Efternamn: </label>
+            <input
+              class="input"
+              id="lastName"
+              name="lastName"
+              type="text"
+              value="<%= lastName %>"
+            />
+          </div>
+          <div class="input-box">
+            <label class="label" for="email">Email: </label>
+            <input
+              class="input"
+              id="email"
+              name="email"
+              type="email"
+              value="<%= email %>"
+            />
+          </div>
+          <div class="input-box">
+            <label class="label" for="phone">Telefonnummer: </label>
+            <input
+              class="input"
+              id="phone"
+              name="phone"
+              type="tel"
+              value="<%= phone %>"
+            />
+          </div>
+          <div class="input-box">
+            <label class="label" for="favouriteRegion">Favoritregion:</label>
+            <input
+              class="input"
+              id="favouriteRegion"
+              name="favouriteRegion"
+              type="text"
+              value="<%= favouriteRegion %>"
+            />
+          </div>
+          <button class="btn">
+            <p>Uppdatera uppgifter</p>
+            <i class="fa-solid fa-chevron-right"></i>
+          </button>
+        </form>
+      </div>
+    </main>
+    <%- include('footer') %>
+  </body>
+</html>

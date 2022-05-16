@@ -1,0 +1,92 @@
+@import '../partials/mixins';
+
+.main{
+    @include flex(center, center, column);
+    .list-wrapper{
+        @include flex(initial, initial, column);
+        @include background;
+        height: 90%;
+        width: 90%;
+        overflow-y: scroll;
+        scroll-margin-block-end: none;
+        position:relative;
+        @media(min-width: 650px){
+            flex-direction: row;
+            width: 80%;
+        }
+        .text-box{
+            @include flex(initial, center, column);
+            gap:20px;
+            @media(min-width: 650px){
+                position:sticky;
+                top:20px;
+                left:20px;
+            }
+            h1{
+                text-align: center;
+                color: white;
+            }
+            .sort-links{
+                @include flex(initial, center, column);
+                gap:10px;
+                @media(min-width: 650px){
+                    align-items: initial;
+                }
+                p{
+                    color:white;
+                    font-weight: bold;
+                }
+                a{
+                    color:white;
+                    text-decoration: none;
+                    &:hover{
+                        font-weight: bold;
+                    }
+                }
+            }
+        }
+        .list-box{
+            width: 100%;
+            max-width: 800px;
+            .members-list{
+                @include flex(initial, center, column);
+                list-style-type: none;
+                li{
+                    @include flex(initial, flex-start, column);
+                    border-radius: 2px;
+                    padding:2%;
+                    margin: 2% 0;
+                    width: 80%;
+                    max-width: 400px;
+                    border-top: 1px solid white;
+                    .member-box{
+                        @include flex(initial, flex-start, column);
+                        width: 100%;
+                        p{
+                            color:white;
+                            line-height: 20px;
+                            word-break:break-all;
+                            font-weight: bold;
+                        }
+                        a{
+                            @include flex(initial, initial, row);
+                            font-size: 18px;
+                            align-self: flex-end;
+                            font-weight: bold;
+                            color:red;
+                            text-decoration: none;
+                            gap:2px;
+                            i{
+                                align-self: center;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        &::-webkit-scrollbar{
+            display:none;
+        }
+        
+    }
+}

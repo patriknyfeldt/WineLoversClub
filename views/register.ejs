@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script
+      src="https://kit.fontawesome.com/c08e8e6912.js"
+      crossorigin="anonymous"
+    ></script>
+    <link rel="stylesheet" href="/styles/style.css" />
+    <link rel="stylesheet" href="/styles/form/form.css" />
+    <title>Bli medlem</title>
+  </head>
+  <body>
+    <header class="header">
+      <nav class="nav">
+        <a href="/">Startsida</a>
+        <a href="/members">Våra medlemmar</a>
+        <a class="current-page" href="/register">Bli medlem</a>
+      </nav>
+    </header>
+    <main class="main">
+      <div class="form-wrapper">
+        <h1>Bli medlem</h1>
+        <form class="form" action="/register" method="post">
+          <div class="input-box">
+            <label class="label" for="firstName">Förnamn: </label>
+            <input
+              class="input"
+              id="firstName"
+              name="firstName"
+              type="text"
+              required
+            />
+          </div>
+          <div class="input-box">
+            <label class="label" for="lastName">Efternamn: </label>
+            <input
+              class="input"
+              id="lastName"
+              name="lastName"
+              type="text"
+              required
+            />
+          </div>
+          <div class="input-box">
+            <label class="label" for="email">Email: </label>
+            <input
+              class="input"
+              id="email"
+              name="email"
+              type="email"
+              required
+            />
+          </div>
+          <div class="input-box">
+            <label class="label" for="phone">Telefonnummer: </label>
+            <input class="input" id="phone" name="phone" type="tel" required />
+          </div>
+          <div class="input-box">
+            <label class="label" for="favouriteRegion">Favoritregion:</label>
+            <input
+              class="input"
+              id="favouriteRegion"
+              name="favouriteRegion"
+              type="text"
+              required
+            />
+          </div>
+          <button class="btn">
+            <p>Registrera</p>
+            <i class="fa-solid fa-chevron-right"></i>
+          </button>
+        </form>
+      </div>
+    </main>
+    <%- include('footer') %>
+  </body>
+</html>

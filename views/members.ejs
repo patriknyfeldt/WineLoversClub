@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script
+      src="https://kit.fontawesome.com/c08e8e6912.js"
+      crossorigin="anonymous"
+    ></script>
+    <link rel="stylesheet" href="/styles/style.css" />
+    <link rel="stylesheet" href="/styles/members/members.css" />
+    <title>Våra medlemmar</title>
+  </head>
+  <body>
+    <header class="header">
+      <nav class="nav">
+        <a href="/">Startsida</a>
+        <a class="current-page" href="/members">Våra medlemmar</a>
+        <a href="/register">Bli medlem</a>
+      </nav>
+    </header>
+    <main class="main">
+      <div class="list-wrapper">
+        <div class="text-box">
+          <h1>Medlemmar</h1>
+          <div class="sort-links">
+            <p>Sortera på efternamn:</p>
+            <a href="/members/sort/1">A-Ö</a>
+            <a href="/members/sort/-1">Ö-A</a>
+            <p>Eller visa:</p>
+            <a href="/members">Ursprunglig ordning</a>
+          </div>
+        </div>
+        <div class="list-box">
+          <ul class="members-list">
+            <% members.forEach(member => { %>
+            <li>
+              <div class="member-box">
+                <p><%= member.firstName %> <%= member.lastName %></p>
+                <a href="/members/profile/<%= member._id %>">
+                  Visa profil
+                  <i class="fa-solid fa-chevron-right"></i
+                ></a>
+              </div>
+            </li>
+            <% }) %>
+          </ul>
+        </div>
+      </div>
+    </main>
+
+    <%- include('footer') %>
+  </body>
+</html>

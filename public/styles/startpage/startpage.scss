@@ -1,0 +1,43 @@
+@import '../partials/mixins';
+
+.main {
+    @include flex(center, center, column);
+    .text-wrapper{
+        @include flex(initial, center, column);
+        margin-top: 50px;
+        .text-box {
+            @include flex(space-between, center, row);
+            @include background;
+            width: 90%;
+            gap:20px;
+            flex-wrap: wrap;
+            line-height: 27px;
+            padding:4%;
+            h1{
+                align-self:flex-start;
+                line-height: 35px;
+                width: 150px;
+                color:white;
+            }
+            p{
+                    max-width: 350px;
+                    font-weight: bold;
+                    color: white;
+                }
+                a{
+                    @include flex(initial, initial, row);
+                    gap:2px;
+                    align-self: flex-end;
+                    text-decoration: none; 
+                    font-size: 22px;
+                    font-weight: bold;
+                    color:red;
+                    i{
+                        align-self: center;
+                    }
+                }
+            }
+        }
+}
+    
+

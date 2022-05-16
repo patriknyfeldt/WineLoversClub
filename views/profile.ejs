@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script
+      src="https://kit.fontawesome.com/c08e8e6912.js"
+      crossorigin="anonymous"
+    ></script>
+    <link rel="stylesheet" href="/styles/style.css" />
+    <link rel="stylesheet" href="/styles/profile/profile.css" />
+    <title><%= firstName %> <%= lastName %></title>
+  </head>
+  <body>
+    <header class="header">
+      <nav class="nav">
+        <a href="/">Startsida</a>
+        <a class="current-page" href="/members">Våra medlemmar</a>
+        <a href="/register">Bli medlem</a>
+      </nav>
+    </header>
+    <main class="main">
+      <div class="profile-container">
+        <h1>Profil</h1>
+        <div class="profile-wrapper">
+          <p class="bold">Namn:</p>
+          <p><%= firstName %> <%= lastName %></p>
+          <p class="bold">Mejladress:</p>
+          <p><%= email %></p>
+          <p class="bold">Telfonnummer:</p>
+          <p><%= phone %></p>
+          <p class="bold">Medlem sedan:</p>
+          <p><%= joinedAt.toLocaleDateString() %></p>
+          <p class="bold">Favoritregion:</p>
+          <p><%= favouriteRegion %></p>
+        </div>
+        <div class="forms-wrapper">
+          <form action="/delete/<%= _id %>" method="post">
+            <button class="btn trash">
+              <p>Ta bort</p>
+              <i class="fa-regular fa-trash-can"></i>
+            </button>
+          </form>
+          <form action="/members/profile/change-data/<%= _id %>" method="get">
+            <button class="btn">
+              <p>Ändra profil</p>
+              <i class="fa-solid fa-chevron-right"></i>
+            </button>
+          </form>
+        </div>
+      </div>
+    </main>
+    <%- include('footer') %>
+  </body>
+</html>

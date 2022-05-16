@@ -1,0 +1,42 @@
+@import '../partials/mixins';
+
+.main{
+    @include flex(center, center, column);
+    .form-wrapper{
+        @include flex(center, center, column);
+        @include background;
+        gap:20px;
+        width: 90%;
+        max-width: 600px;
+        padding:5% 5%;
+        @media(min-width:700px){
+            @include flex(space-between, initial, row);
+        }
+        h1{
+            color:white;
+        }
+        .form{
+            @include flex(initial, center, column);
+            gap:10px;
+            width: 80%;
+            .input-box{
+                width: 100%;
+                .label{
+                    color:white;
+                    font-weight: bold;
+                }
+                .input{
+                    border-radius: 5px;
+                    font-size:16px;
+                    width: 90%;
+                    min-width: 250px;
+                    height: 30px;
+                    font-weight: bold;
+                }
+            }
+            .btn{
+                @include button;
+            }
+        }
+    }
+}
